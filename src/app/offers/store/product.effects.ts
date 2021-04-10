@@ -17,9 +17,8 @@ export class ProductEffects {
       switchMap(action =>
         this.service.load().pipe(
           delay(1000),
-          map(data => {
-            console.warn('data', data);
-            return loadOffers({products: []})
+          map(offers => {;
+            return loadOffers({offers})
           })
       ))
     )

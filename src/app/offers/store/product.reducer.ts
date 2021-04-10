@@ -20,21 +20,12 @@ export const initialState: OfferState = adapter.getInitialState({
 
 export const reducer = createReducer(
   initialState,
-  /*on(OffersActions.addProduct,
-    (state, action) => adapter.addOne(action.product, state)
-  ),
-  on(OffersActions.updateProduct,
-    (state, action) => adapter.updateOne(action.product, state)
-  ),
-  on(OffersActions.deleteProduct,
-    (state, action) => adapter.removeOne(action.id, state)
-  ),
-  on(OffersActions.loadProducts,
-    (state, action) => adapter.setAll(action.products, {
+  on(OffersActions.loadOffers,
+    (state, action) => adapter.setAll(action.offers, {
         ...state,
         isLoading: false
     })
-  ),*/
+  ),
   on(OffersActions.requestLoadOffers,
     (state, action) => adapter.setAll([], {
       ...state,

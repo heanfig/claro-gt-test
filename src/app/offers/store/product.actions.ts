@@ -10,23 +10,10 @@ export const requestLoadOffers = createAction(
 
 export const loadOffers = createAction(
   '[Product/JSON] Load Products',
-  props<{ products: Offers[] }>()
+  props<{ offers: Offers[] }>()
 );
 
-/*export const addProduct = createAction(
-  '[Product/JSON] Add Product',
-  props<{ product: Product }>()
-);
-
-export const updateProduct = createAction(
-  '[Product/JSON] Update Product',
-  props<{ product: Update<Product> }>()
-);
-
-export const deleteProduct = createAction(
-  '[Product/JSON] Delete Product',
-  props<{ id: string }>()
-);
+/*
 
 export const searchProduct = createAction(
   '[Product/JSON] Search Products',

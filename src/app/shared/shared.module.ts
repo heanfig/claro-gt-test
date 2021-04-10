@@ -16,6 +16,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatSelectModule} from '@angular/material/select';
+
 
 @NgModule({
   exports: [
@@ -35,7 +37,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatTabsModule,
     MatButtonToggleModule,
     MatExpansionModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSelectModule
   ]
 })
 export class SharedModule { }

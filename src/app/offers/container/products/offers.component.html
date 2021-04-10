@@ -8,13 +8,12 @@
     <div>
       <div fxFlex.gt-xs="50%" fxFlex="100">
         <mat-form-field appearance="fill">
-          <mat-label>Cars</mat-label>
-          <select matNativeControl required>
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
-          </select>
+          <mat-label>Seleccione Oferta</mat-label>
+          <mat-select (selectionChange)="chooseOffer($event)">
+            <mat-option *ngFor="let offer of (offers$ | async)" [value]="offer">
+              {{ offer.name }}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
       </div>
       <div fxFlex.gt-xs="50%" fxFlex="100">
