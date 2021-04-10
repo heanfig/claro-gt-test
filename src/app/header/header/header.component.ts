@@ -5,7 +5,7 @@ import { debounceTime, distinctUntilChanged, filter, map, takeUntil } from 'rxjs
 
 import * as fromStore from '../store/header.reducer';
 import * as fromSelector from '../store/header.selectors';
-import { searchProduct, requestLoadProducts } from '../../offers/store/product.actions';
+/* import { searchProduct } from '../../offers/store/product.actions'; */
 
 @Component({
   selector: 'app-header',
@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
   }
 
-  watchSearch(): void {
+  /*watchSearch(): void {
     of(this.searchQuery)
       .pipe(
         map(value => value.trim()),
@@ -34,7 +34,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
         takeUntil(this.destroySub)
       )
       .subscribe(query => this.store.dispatch(searchProduct({ searchQuery: query })));
-  }
+  }*/
 
   ngOnDestroy(): void {
     this.destroySub.next(true);

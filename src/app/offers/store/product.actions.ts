@@ -1,33 +1,34 @@
 import { Update } from '@ngrx/entity';
 import { createAction, props } from '@ngrx/store';
 
-import { Product } from '../models/product';
+import { Offers } from '../models/offer';
 
-export const requestLoadProducts = createAction(
-  '[Product/API] Request Load Products'
+// Usado, load de ofertas
+export const requestLoadOffers = createAction(
+  '[Product/JSON] Request Load Products'
 );
 
-export const loadProducts = createAction(
-  '[Product/API] Load Products',
-  props<{ products: Product[] }>()
+export const loadOffers = createAction(
+  '[Product/JSON] Load Products',
+  props<{ products: Offers[] }>()
 );
 
-export const addProduct = createAction(
-  '[Product/API] Add Product',
+/*export const addProduct = createAction(
+  '[Product/JSON] Add Product',
   props<{ product: Product }>()
 );
 
 export const updateProduct = createAction(
-  '[Product/API] Update Product',
+  '[Product/JSON] Update Product',
   props<{ product: Update<Product> }>()
 );
 
 export const deleteProduct = createAction(
-  '[Product/API] Delete Product',
+  '[Product/JSON] Delete Product',
   props<{ id: string }>()
 );
 
 export const searchProduct = createAction(
-  '[Product/API] Search Products',
+  '[Product/JSON] Search Products',
   props<{ searchQuery: string }>()
-);
+);*/

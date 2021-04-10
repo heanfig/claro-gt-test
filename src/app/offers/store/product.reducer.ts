@@ -1,41 +1,41 @@
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { createReducer, on } from '@ngrx/store';
 
-import { Product } from '../models/product';
-import * as ProductActions from './product.actions';
+import { Offers } from '../models/offer';
+import * as OffersActions from './product.actions';
 
 export const productsFeatureKey = 'products';
 
-export interface ProductState extends EntityState<Product> {
+export interface OfferState extends EntityState<Offers> {
   isLoading: boolean;
   error: string | null;
 }
 
-export const adapter: EntityAdapter<Product> = createEntityAdapter<Product>();
+export const adapter: EntityAdapter<Offers> = createEntityAdapter<Offers>();
 
-export const initialState: ProductState = adapter.getInitialState({
+export const initialState: OfferState = adapter.getInitialState({
   isLoading: true,
   error: null
 });
 
 export const reducer = createReducer(
   initialState,
-  on(ProductActions.addProduct,
+  /*on(OffersActions.addProduct,
     (state, action) => adapter.addOne(action.product, state)
   ),
-  on(ProductActions.updateProduct,
+  on(OffersActions.updateProduct,
     (state, action) => adapter.updateOne(action.product, state)
   ),
-  on(ProductActions.deleteProduct,
+  on(OffersActions.deleteProduct,
     (state, action) => adapter.removeOne(action.id, state)
   ),
-  on(ProductActions.loadProducts,
+  on(OffersActions.loadProducts,
     (state, action) => adapter.setAll(action.products, {
         ...state,
         isLoading: false
     })
-  ),
-  on(ProductActions.requestLoadProducts,
+  ),*/
+  on(OffersActions.requestLoadOffers,
     (state, action) => adapter.setAll([], {
       ...state,
       isLoading: true
@@ -50,5 +50,5 @@ export const {
   selectTotal,
 } = adapter.getSelectors();
 
-export const selectIsLoading = (state: ProductState) => state.isLoading;
-export const selectError = (state: ProductState) => state.error;
+export const selectIsLoading = (state: OfferState) => state.isLoading;
+export const selectError = (state: OfferState) => state.error;

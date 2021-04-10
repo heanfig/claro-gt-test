@@ -2,8 +2,8 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 import * as fromStore from './product.reducer';
 
-const productsSelector = createFeatureSelector<fromStore.ProductState>(fromStore.productsFeatureKey);
+const offerSelector = createFeatureSelector<fromStore.OfferState>(fromStore.productsFeatureKey);
 
-export const isLoading = createSelector(productsSelector, fromStore.selectIsLoading);
-export const products = createSelector(productsSelector, fromStore.selectAll);
-export const error = createSelector(productsSelector, fromStore.selectError);
+export const isLoading = createSelector(offerSelector, fromStore.selectIsLoading);
+export const offers = createSelector(offerSelector, fromStore.selectAll);
+export const error = createSelector(offerSelector, fromStore.selectError);

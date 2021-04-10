@@ -1,28 +1,31 @@
-import { products } from './products.selectors';
+// import { products } from './products.selectors';
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { switchMap, map, debounceTime, delay } from 'rxjs/operators';
 
-import { ProductService } from '../service/product.service';
-import { loadProducts, requestLoadProducts, searchProduct } from './product.actions';
+import { DataService } from '../service/data.service';
+import { loadOffers, requestLoadOffers } from './product.actions';
 
 @Injectable()
 export class ProductEffects {
 
-  constructor(private actions$: Actions, private service: ProductService) {}
+  constructor(private actions$: Actions, private service: DataService) {}
 
-  loadProducts$ = createEffect(() =>
+  loadOffers$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(requestLoadProducts),
+      ofType(requestLoadOffers),
       switchMap(action =>
         this.service.load().pipe(
-          delay(3000),
-          map(data => loadProducts({products: data}))
+          delay(1000),
+          map(data => {
+            console.warn('data', data);
+            return loadOffers({products: []})
+          })
       ))
     )
   );
 
-  searchProduct$ = createEffect(() =>
+  /*searchProduct$ = createEffect(() =>
       this.actions$.pipe(
         ofType(searchProduct),
         switchMap(action => this.service.search(action.searchQuery)
@@ -31,5 +34,5 @@ export class ProductEffects {
           map(data => loadProducts({products: data}))
         ))
       )
-  );
+  );*/
 }

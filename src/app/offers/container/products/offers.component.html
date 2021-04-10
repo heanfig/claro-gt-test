@@ -1,0 +1,67 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Shiba Inu</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div>
+      <div fxFlex.gt-xs="50%" fxFlex="100">
+        <mat-form-field appearance="fill">
+          <mat-label>Cars</mat-label>
+          <select matNativeControl required>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select>
+        </mat-form-field>
+      </div>
+      <div fxFlex.gt-xs="50%" fxFlex="100">
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <mat-label>Favorite food</mat-label>
+            <input matInput placeholder="Ex. Pizza" value="Sushi">
+          </mat-form-field>
+        
+          <mat-form-field class="example-full-width">
+            <mat-label>Leave a comment</mat-label>
+            <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+          </mat-form-field>
+        </form>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+
+<mat-sidenav-container class="background-none">
+  <mat-spinner *ngIf="isLoading$ | async; else productList" style="margin:0 auto;"></mat-spinner>
+  <ng-template #productList>
+    <div fxLayout="row wrap">
+      <div fxFlex.gt-sm="20" fxFlex.gt-xs="33.3333%" fxFlex="100" *ngFor="let product of offers$ | async">
+        <!--<mat-card class="pa-0">
+          <div class="media-grid">
+            <figure style="background-color:white; height: 200px;">
+              <img src="assets/images/{{ product.image }}.jpg" height="245px">
+            </figure>
+          </div>
+          <mat-card-content class="pa-1">
+            <div fxLayout="row" fxLayoutAlign="center center">
+              <div fxFlex>
+                <p class="ma-0">{{ product.name }}</p>
+                <p class="ma-0 text-md mat-text-secondary">{{ product.description }}</p>
+              </div>
+              <div class="mat-text-primary text-xl">
+                <span> $ {{ product.price }}</span>
+              </div>
+              <button mat-icon-button color="accent" (click)="addProductCart(product)">
+                <mat-icon>add_shopping_cart</mat-icon>
+              </button>
+            </div>
+          </mat-card-content>
+        </mat-card>-->
+      </div>
+    </div>
+  </ng-template>
+</mat-sidenav-container>
