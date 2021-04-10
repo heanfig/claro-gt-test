@@ -1,3 +1,5 @@
+@import '../../../../styles/material.variables.scss';
+
 :host {
     display: inherit;
     padding: 32px 0;
@@ -5,7 +7,7 @@
     &::before {
       content: "";
       width: calc(100% + 33px);
-      height: 2px;background: #e53631;
+      height: 2px;background: $theme-claro-primary;
       position: absolute;
       left: 0;
       top: 16px;
@@ -15,18 +17,23 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 14px;
-      border: 1px solid #e53631;
+      border: 1px solid $theme-claro-primary;
       margin: 5px;
       &.heading {
-        background: #e53631;;
+        background: $theme-claro-primary;;
         & mat-label {
           color: #fff;
         }
       }
     }
     mat-label {
-      color: #e53631;
+      color: $theme-claro-primary;
       padding: 4px;
       margin: 2px;
+    }
+    .nodata {
+      font-size: 20px;
+      padding-left: 6px;
+      color: #e53631;
     }
 }

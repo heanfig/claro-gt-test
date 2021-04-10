@@ -21,6 +21,11 @@ export class OffersComponent implements OnInit {
   characteristics$: Observable<any[]> = of([]);
   prices$: Observable<any[]>= of([]);
 
+  /**
+   * Creates an instance of OffersComponent.
+   * @param {Store<fromStore.OfferState>} store
+   * @memberof OffersComponent
+   */
   constructor(private store: Store<fromStore.OfferState>) {
     this.store.dispatch(fromActions.requestLoadOffers());
     this.offers$ = this.store.select(fromSelector.offers).pipe(
@@ -33,18 +38,14 @@ export class OffersComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /**
+   * Choose offer from HTMLEvent
+   * @param {*} {value}
+   * @memberof OffersComponent
+   */
   chooseOffer({value}: any){
-    
-    this.characteristics$ = of(value).pipe(
-      map( ({characteristics}) => characteristics.map( (feature:any) => feature.id ))
-    )
-
-    this.prices$ = of(value).pipe(
-      map( ({productOfferingPrices}) => productOfferingPrices ),
-      map( prices => prices.flatMap( ({versions}:any) => versions ) ),
-      map( prices => prices.map( ({ id, name, price }:any) => ({ id, name, price })) ),
-    )
-
+    this.characteristics$ = of(value);
+    this.prices$ = of(value);
   }
 
 }

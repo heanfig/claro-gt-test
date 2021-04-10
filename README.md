@@ -1,7 +1,10 @@
 # Test Claro
 [![Netlify Status](https://api.netlify.com/api/v1/badges/63638c9f-3509-47d0-88c4-c5460b66ba00/deploy-status)](https://app.netlify.com/sites/admiring-kirch-09cf35/deploys)
 
+PREVIEW => https://admiring-kirch-09cf35.netlify.app/offers
+
 ![enter image description here](https://i.imgur.com/mejuEgC.png)
+
 
 # features
 

@@ -1,3 +1,5 @@
+@import '../../../../styles/material.variables.scss';
+
 .background-none {
   background-color: transparent;
   box-shadow: none;
@@ -13,7 +15,7 @@
 .offer-card {
   max-width: 60%;
   margin: 2rem auto;
-  border: 1px solid #e53631;
+  border: 1px solid $theme-claro-primary;
   min-height: 23rem;
   &_container {
     display: flex;
@@ -21,7 +23,7 @@
     flex-wrap: wrap;
   }
   mat-card-header {
-    background: #e53631;
+    background: $theme-claro-primary;
     .mat-card-title,
     .mat-card-subtitle {
       color: #fff;

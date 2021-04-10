@@ -17,6 +17,8 @@ $angular-ngrx-example-accent: mat-palette($mat-pink, 400);
 // The warn palette is optional (defaults to red).
 $angular-ngrx-example-warn: mat-palette($mat-red);
 
+$theme-claro-primary: #e53631;
+
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
 $angular-ngrx-example-theme: mat-light-theme((
@@ -38,5 +40,5 @@ $foreground: map-get($angular-ngrx-example-theme, foreground);
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-toolbar.mat-primary {
-  background: #e53631;
+  background: $theme-claro-primary;
 }

@@ -1,8 +1,15 @@
 $mat-card-header-size: 40px !default;
 $gutter: 1rem !default;
 $border-radius-base: 2px !default;
+$theme-claro-primary: #e53631;
 
 body {
+  .mat-progress-spinner {
+    margin: 10px 0;
+    & circle, .mat-spinner circle {
+      stroke: $theme-claro-primary !important;
+    }
+  }
   .mat-card {
     padding: 0;
     margin: ($gutter/3);

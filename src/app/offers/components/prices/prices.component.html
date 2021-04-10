@@ -4,9 +4,14 @@
         <mat-label> Name </mat-label>
         <mat-label> Amount </mat-label>
     </div>
-    <div class="offer_item" *ngFor="let price of (prices$ | async)" >
-        <mat-label >{{price.id}}</mat-label>
-        <mat-label>{{price.name}}</mat-label>
-        <mat-label>{{price.price.amount | currency:price.price.units.code }}</mat-label>
-    </div>
+    <ng-container *ngIf="(prices | async) as list; else nodata">
+        <div class="offer_item" *ngFor="let price of (prices | async)" >
+            <mat-label >{{price.id}}</mat-label>
+            <mat-label>{{price.name}}</mat-label>
+            <mat-label>{{price.price.amount | currency:price.price.units.code }}</mat-label>
+        </div>
+    </ng-container>
+    <ng-template #nodata>
+        <span class="nodata">No hay Data</span>
+    </ng-template>
 </ng-container>

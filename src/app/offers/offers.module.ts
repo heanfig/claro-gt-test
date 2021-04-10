@@ -25,4 +25,4 @@ import * as fromProduct from './store/product.reducer';
     SharedModule
   ]
 })
-export class ProductsModule { }
+export class OffersModule { }
