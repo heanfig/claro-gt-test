@@ -1,4 +1,13 @@
-# Prueba Claro
+# Test Claro
+
+![enter image description here](https://i.imgur.com/mejuEgC.png)
+
+# features
+
+1. ngRx
+2. Smart and dump components
+3. RxJs
+4. Hope...🙏
 
 ## Development server
 
