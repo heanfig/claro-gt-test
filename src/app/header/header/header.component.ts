@@ -1,10 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Observable, of, Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter, map, takeUntil } from 'rxjs/operators';
-
-import * as fromStore from '../store/header.reducer';
-import * as fromSelector from '../store/header.selectors';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -14,11 +9,9 @@ import * as fromSelector from '../store/header.selectors';
 export class HeaderComponent implements OnInit, OnDestroy {
 
   searchQuery = '';
-  cartCount$: Observable<number>;
   destroySub = new Subject();
 
-  constructor(private store: Store<fromStore.ShoppingCartState>) {
-    this.cartCount$ = this.store.select(fromSelector.cartCount);
+  constructor() {
   }
 
   ngOnInit(): void {

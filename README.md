@@ -1,11 +1,12 @@
 # Test Claro
+[![Netlify Status](https://api.netlify.com/api/v1/badges/63638c9f-3509-47d0-88c4-c5460b66ba00/deploy-status)](https://app.netlify.com/sites/admiring-kirch-09cf35/deploys)
 
 ![enter image description here](https://i.imgur.com/mejuEgC.png)
 
 # features
 
-1. ngRx
-2. Smart and dump components
+1. ngRx using redux pattern
+2. Smart and dump components Pattern
 3. RxJs
 4. Hope...🙏
 
