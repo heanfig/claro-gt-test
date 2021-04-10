@@ -10,22 +10,69 @@
 .mat-text-primary { color: #2e7d32; }
 .mat-text-secondary { color: #38006b; }
 
-.media-grid {
-  text-align: center;
-  overflow: hidden;
-  figure {
-    position: relative;
-    text-align: center;
-    cursor: pointer;
-    background: rgba(0,0,0,.38);
-    text-align: left;
-    border-radius: 2px 2px 0 0;
-    text-align: center;
+.offer-card {
+  max-width: 60%;
+  margin: 2rem auto;
+  border: 1px solid #e53631;
+  min-height: 23rem;
+  &_container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
-  figure img {
+  mat-card-header {
+    background: #e53631;
+    .mat-card-title,
+    .mat-card-subtitle {
+      color: #fff;
+    }
+  }
+  .offer {
+    $block: &;
+    &__container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      .offer__form {
+        width: 100%;
+      }
+      .offer__caption {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        mat-label {
+          color: #e53631;
+          font-size: 20px;
+          text-align: left;
+          border: 1px solid #e53631;
+          margin: 3px;
+          padding: 4px;          
+        }
+      }
+    }
+  }
+  .offer__details {
+    padding: 32px 0;
     position: relative;
-    display: block;
-    max-width: 100%;
-    border-radius: 2px 2px 0 0;
+    &::before {
+      content: "";
+      width: calc(100% + 33px);
+      height: 2px;background: #e53631;
+      position: absolute;
+      left: 0;
+      top: 16px;
+      margin-left: -17px;
+    }
+    .offer_item {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 14px;
+      border: 1px solid #e53631;
+      margin: 5px;
+    }
+    mat-label {
+      color: #e53631;
+      padding: 4px;
+      margin: 2px;
+    }
   }
 }

@@ -37,19 +37,16 @@ export class OffersComponent implements OnInit {
   ngOnInit(): void {}
 
   chooseOffer({value}: any){
-    of(value).pipe(
+    
+    this.characteristics$ = of(value).pipe(
       map( ({characteristics}) => characteristics.map( (feature:any) => feature.id ))
-    ).subscribe(
-      item => console.warn(item)
-    );
+    )
 
-    of(value).pipe(
+    this.prices$ = of(value).pipe(
       map( ({productOfferingPrices}) => productOfferingPrices ),
       map( prices => prices.flatMap( ({versions}:any) => versions ) ),
       map( prices => prices.map( ({ id, name, price }:any) => ({ id, name, price })) ),
-    ).subscribe(
-      item => console.warn(item)
-    );
+    )
 
   }
 

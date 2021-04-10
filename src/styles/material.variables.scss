@@ -37,3 +37,6 @@ $foreground: map-get($angular-ngrx-example-theme, foreground);
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-toolbar.mat-primary {
+  background: #e53631;
+}
