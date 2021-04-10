@@ -23,15 +23,4 @@ export class ProductEffects {
       ))
     )
   );
-
-  /*searchProduct$ = createEffect(() =>
-      this.actions$.pipe(
-        ofType(searchProduct),
-        switchMap(action => this.service.search(action.searchQuery)
-        .pipe(
-          delay(1000),
-          map(data => loadProducts({products: data}))
-        ))
-      )
-  );*/
 }

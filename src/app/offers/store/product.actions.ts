@@ -13,9 +13,3 @@ export const loadOffers = createAction(
   props<{ offers: Offers[] }>()
 );
 
-/*
-
-export const searchProduct = createAction(
-  '[Product/JSON] Search Products',
-  props<{ searchQuery: string }>()
-);*/

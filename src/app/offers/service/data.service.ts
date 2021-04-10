@@ -15,10 +15,5 @@ export class DataService {
   load(): Observable<Offers[]> {
     return this.http.get<Offers[]>('assets/data/ofertas.json');
   }
-
-  /*search(searchQuery: string): Observable<Product[]> {
-    return this.load().pipe(
-      map((list: Product[]) => list.filter((value) => value.name.toLowerCase().indexOf(searchQuery.toLowerCase()) > -1))
-    );
-  }*/
+  
 }
