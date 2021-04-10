@@ -3,7 +3,9 @@
   <ng-template #productList>
     <mat-card class="offer-card">
       <mat-card-header>
-        <div mat-card-avatar class="offer-header-image"></div>
+        <div mat-card-avatar class="offer-header-image">
+          <img src="https://miclaroapp.com.co/Images/icon_nuevomiclaroblanco4.png" alt="">
+        </div>
         <mat-card-title>SELECTOR DE OFERTAS</mat-card-title>
         <mat-card-subtitle>Claro Guatemala</mat-card-subtitle>
       </mat-card-header>
@@ -19,17 +21,9 @@
               </mat-select>
             </mat-form-field>
           </div>
-          <div class="offer__caption">
-            <mat-label *ngFor="let feature of (characteristics$ | async)" >{{feature}}</mat-label>
-          </div>
+          <app-characteristics [data]="characteristics$"></app-characteristics>
         </div>
-        <div class="offer__details">
-          <div class="offer_item" *ngFor="let price of (prices$ | async)" >
-            <mat-label >{{price.id}}</mat-label>
-            <mat-label>{{price.name}}</mat-label>
-            <mat-label>{{price.price.amount | currency:price.price.units.code }}</mat-label>
-          </div>
-        </div>
+        <app-prices [data]="prices$"></app-prices>
       </mat-card-content>
     </mat-card>
   </ng-template>

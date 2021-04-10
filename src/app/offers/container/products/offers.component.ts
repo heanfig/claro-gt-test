@@ -13,7 +13,7 @@ import { map } from 'rxjs/operators';
   selector: 'app-offers',
   templateUrl: './offers.component.html',
   styleUrls: ['./offers.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OffersComponent implements OnInit {
 

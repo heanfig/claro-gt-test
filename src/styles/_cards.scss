@@ -28,6 +28,18 @@ body {
       line-height: 40px;
       margin: $gutter 0 0 $gutter;
     }
+    .mat-card-avatar {
+      width: auto;
+      height: 40px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      object-fit: cover;
+      padding-top: 6px;
+      padding-left: 14px;
+      img {
+        max-width: 100%;
+      }
+    }
     .mat-card-image {
       width: 100%;
       margin: 0;

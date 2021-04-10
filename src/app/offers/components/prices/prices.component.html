@@ -1,0 +1,12 @@
+<ng-container>
+    <div class="offer_item heading" >
+        <mat-label > Id </mat-label>
+        <mat-label> Name </mat-label>
+        <mat-label> Amount </mat-label>
+    </div>
+    <div class="offer_item" *ngFor="let price of (prices$ | async)" >
+        <mat-label >{{price.id}}</mat-label>
+        <mat-label>{{price.name}}</mat-label>
+        <mat-label>{{price.price.amount | currency:price.price.units.code }}</mat-label>
+    </div>
+</ng-container>

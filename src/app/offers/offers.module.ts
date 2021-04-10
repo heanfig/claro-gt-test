@@ -4,13 +4,19 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 
 import { SharedModule } from '../shared/shared.module';
+import { CharacteristicsComponent } from './components/characteristics/characteristics.component';
+import { PricesComponent } from './components/prices/prices.component';
 import { OffersComponent } from './container/products/offers.component';
-import { ProductsRoutingModule } from './products-routing.module';
+import { ProductsRoutingModule } from './offers-routing.module';
 import { ProductEffects } from './store/product.effects';
 import * as fromProduct from './store/product.reducer';
 
 @NgModule({
-  declarations: [OffersComponent],
+  declarations: [
+    CharacteristicsComponent,
+    PricesComponent,
+    OffersComponent
+  ],
   imports: [
     CommonModule,
     ProductsRoutingModule,
